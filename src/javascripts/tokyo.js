@@ -27,7 +27,6 @@
 
   function failJudgement (place) {
     $('#tokyo-result-primary').text('判定失敗');
-    generateShareLinks(place, false);
   }
 
   function generateLink (place) {
