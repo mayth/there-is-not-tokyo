@@ -1,0 +1,20 @@
+{
+  "name": "there-is-not-tokyo",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mayth/there-is-not-tokyo",
+  "authors": [
+    "Mei Akizuru <chimeaquas@hotmail.com>"
+  ],
+  "description": "There is not Tokyo",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.6.0"
+  }
+}
