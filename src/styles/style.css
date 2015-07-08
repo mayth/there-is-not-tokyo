@@ -47,8 +47,15 @@ body {
 #tokyo-result {
   text-align: center;
   color: #eee;
+}
+
+#tokyo-result-primary {
   font-size: 250%;
   font-weight: bold;
+}
+
+#result-share-link {
+  color: #bbf;
 }
 
 #yahoo-api-credit {

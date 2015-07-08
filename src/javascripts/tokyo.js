@@ -5,20 +5,38 @@
   var endpoint = 'http://geo.search.olp.yahooapis.jp/OpenLocalPlatform/V1/geoCoder?callback=?';
   var re = /^東京都/;
 
+  function generateShareLinks (place, result) {
+    $('#result-share-link').attr('href', generateLink(place))
+                           .text('判定結果へのリンク');
+  }
+
   function itIsTokyo (place) {
-    $('#tokyo-result').text('そこは東京である');
+    $('#tokyo-result-primary').text('そこは東京である');
+    generateShareLinks(place, true);
   }
 
   function itIsNotTokyo (place) {
-    $('#tokyo-result').text('そこは東京ではない');
+    $('#tokyo-result-primary').text('そこは東京ではない');
+    generateShareLinks(place, false);
   }
 
   function itSeemsNonPlaceName (place) {
-    $('#tokyo-result').text('そもそも地名ではない');
+    $('#tokyo-result-primary').text('そもそも地名ではない');
+    generateShareLinks(place, false);
   }
 
   function failJudgement (place) {
-    $('#tokyo-result').text('判定失敗');
+    $('#tokyo-result-primary').text('判定失敗');
+    generateShareLinks(place, false);
+  }
+
+  function generateLink (place) {
+    var protocol = document.location.protocol;
+    var hostname = document.location.hostname;
+    if (document.location.port != 80) {
+      hostname += ':' + document.location.port;
+    }
+    return protocol + '//' + hostname + '?' + encodeURIComponent(place);
   }
 
   function tokyoQuery (place) {
